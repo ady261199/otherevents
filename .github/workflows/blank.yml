@@ -31,4 +31,10 @@ jobs:
 
       - name: showing content
         run: cat file.txt
+
+      - name: uploading again
+        uses: actions/upload-artifact@v4
+        with: 
+          name: job2-file
+          path: file.txt
   
