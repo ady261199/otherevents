@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout code
+        uses: actions/checkout@v4
       - name: create a file in linux
         run: echo "this is job1!" > file.txt
 
