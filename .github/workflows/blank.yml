@@ -2,14 +2,33 @@ name: Artifact Action
 
 on:
   workflow_dispatch:
-
+    
 jobs:
   create_file:
     runs-on: ubuntu-latest
 
     steps:
       - name: create a file in linux
-        run: echo "this is job!" > file.txt
+        run: echo "this is job1!" > file.txt
 
-      - name: show the content
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: job-file
+          path: file.txt
+
+  Download_file:
+    needs: create_file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading
+        uses: actions/download-artifact@v4
+        with:
+          name: job-file
+
+      - name: adding another line
+        run: echo "this is job2!" > file.txt
+
+      - name: showing content
         run: cat file.txt
+  
