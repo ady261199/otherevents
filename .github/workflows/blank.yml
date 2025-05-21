@@ -27,7 +27,7 @@ jobs:
           name: job1-file
 
       - name: adding another line
-        run: echo "this is job2!" > file.txt
+        run: echo "this is job2!" >> file.txt
 
       - name: showing content
         run: cat file.txt
