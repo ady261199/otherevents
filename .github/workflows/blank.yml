@@ -14,7 +14,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with: 
-          name: job-file
+          name: job1-file
           path: file.txt
 
   Download_file:
@@ -24,7 +24,7 @@ jobs:
       - name: Downloading
         uses: actions/download-artifact@v4
         with:
-          name: job-file
+          name: job1-file
 
       - name: adding another line
         run: echo "this is job2!" > file.txt
