@@ -39,11 +39,10 @@ jobs:
         with: 
           name: job2-file
           path: file.txt
-      - name: commit and puh the file
+      - name: commit and push the file
         run: |
           git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          cp job1.txt ./ 
+          git config user.email "github-actions@github.com" 
           git add file.txt
           git commit -m "Updated file.txt"
           git push
