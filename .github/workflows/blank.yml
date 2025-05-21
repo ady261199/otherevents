@@ -18,7 +18,6 @@ jobs:
           path: file.txt
 
   Download_file:
-    needs: create_file
     runs-on: ubuntu-latest
     steps:
       - name: Downloading
